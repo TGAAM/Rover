@@ -11,6 +11,7 @@ from discord.ext import commands
 from discord.ext.commands import CommandNotFound
 from discord.ext.commands import CheckFailure
 
+
 # live channel whitelist
 # rovers-park
 whitelistChannelsLive = [705571242312335431]
@@ -23,6 +24,9 @@ whitelistChannelsTest = [697060204571000903, 698135978270916678, 698135987225886
 # setup a discord client and bot commands
 #client = discord.Client()
 bot = commands.Bot(command_prefix="%", case_insensitive=True)
+
+# we don't need no stinking helpful help menu
+bot.remove_command("help")
 
 # don't work in DMs
 @bot.check
@@ -69,9 +73,9 @@ async def flavor(ctx):
     await ctx.send("Manila is my favorite flavor of clam!")
     return
 
-@bot.command(name="help")
+@bot.command()
 @commands.check(is_live_room)
-async def _help(ctx):
+async def help(ctx):
     await ctx.send("I don't need any help right now.\nBut thanks for asking!")
     return
 
