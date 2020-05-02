@@ -62,7 +62,7 @@ Live commmands
 """
 
 @bot.command()
-@commands.check(is_test_room)
+@commands.check(is_live_room)
 async def killager(ctx):
     await ctx.send("https://gfycat.com/infantileearlybudgie")
     return
