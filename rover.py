@@ -63,6 +63,21 @@ Live commmands
 
 @bot.command()
 @commands.check(is_live_room)
+async def roll(ctx, die):
+    try:
+        assert int(die) == float(die)
+        die = int(die)
+        assert die >= 1
+        
+    except:
+        await ctx.send("You can't roll a die with " + str(die) + " sides, smh")
+        return
+    roll = random.randint(1, die)
+    await ctx.send("Your rolled a " +str(roll))
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def banner(ctx):
     await ctx.send("https://imgur.com/a/D5UnEZK")
     return
