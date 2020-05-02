@@ -62,6 +62,24 @@ Live commmands
 """
 
 @bot.command()
+@commands.check(is_test_room)
+async def killager(ctx):
+    await ctx.send("https://gfycat.com/infantileearlybudgie")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
+async def important(ctx):
+    await ctx.send("https://www.youtube.com/watch?v=LVrYnLABnr4")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
+async def kk(ctx):
+    await ctx.send("https://www.youtube.com/watch?v=-4AFLKoGC3M")
+    return
+
+@bot.command()
 @commands.check(is_live_room)
 async def roll(ctx, die):
     try:
