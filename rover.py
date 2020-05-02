@@ -59,6 +59,12 @@ Live commmands
 
 @bot.command()
 @commands.check(is_live_room)
+async def banner(ctx):
+    await ctx.send("https://imgur.com/a/D5UnEZK")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def flavor(ctx):
     await ctx.send("Manila is my favorite flavor of clam!")
     return
