@@ -22,19 +22,25 @@ whitelistChannelsTest = [697060204571000903, 698135978270916678, 698135987225886
 
 # setup a discord client and bot commands
 #client = discord.Client()
-bot = commands.Bot(command_prefix="%")
+bot = commands.Bot(command_prefix="%", case_insensitive=True)
 
 # don't work in DMs
 @bot.check
 async def globally_block_dms(ctx):
     return ctx.guild is not None
 
+# whitelist check
 async def is_live_room(ctx):
     return (ctx.channel.id in whitelistChannelsLive or ctx.channel.id in whitelistChannelsTest)
 
 async def is_test_room(ctx):
     return (ctx.channel.id in whitelistChannelsTest)
 
+# initial setup 
+@bot.event
+async def on_ready():
+    # notify the log that it's ready
+    print('We have logged in as ' + str(bot.user.name) + ' with ID ' + str(bot.user.id))
 
 
 
@@ -79,6 +85,18 @@ async def champion(ctx):
 @commands.check(is_live_room)
 async def fishing(ctx):
     await ctx.send("You caught a sea bass! \n I'd give it a C+!")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
+async def gmax(ctx):
+    await ctx.send("<:gmax_gengar:696490246057099304>")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
+async def party(ctx):
+    await ctx.send("🥳 Party Time! 🥳")
     return
 
 
