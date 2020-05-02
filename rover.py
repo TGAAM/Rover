@@ -87,7 +87,7 @@ Test only commands
 """
 @bot.command()
 @commands.check(is_test_room)
-async def test(ctx):
+async def exampletest(ctx):
     await ctx.send("This is a test only command")
     return
 
