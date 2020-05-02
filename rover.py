@@ -65,6 +65,12 @@ async def flavor(ctx):
 
 @bot.command()
 @commands.check(is_live_room)
+async def help(ctx):
+    await ctx.send("I don't need any help right now.\nBut thanks for asking!")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def hi(ctx):
     await ctx.send("Hey there buddy")
     return
