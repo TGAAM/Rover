@@ -59,6 +59,12 @@ Live commmands
 
 @bot.command()
 @commands.check(is_live_room)
+async def flavor(ctx):
+    await ctx.send("Manila is my favorite flavor of clam!")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def hi(ctx):
     await ctx.send("Hey there buddy")
     return
