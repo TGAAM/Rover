@@ -69,9 +69,9 @@ async def flavor(ctx):
     await ctx.send("Manila is my favorite flavor of clam!")
     return
 
-@bot.command()
+@bot.command(name="help")
 @commands.check(is_live_room)
-async def helpme(ctx):
+async def _help(ctx):
     await ctx.send("I don't need any help right now.\nBut thanks for asking!")
     return
 
