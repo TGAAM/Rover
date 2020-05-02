@@ -91,7 +91,7 @@ async def roll(ctx, die):
         await ctx.send("You can't roll a die with " + str(die) + " sides, smh")
         return
     roll = random.randint(1, die)
-    await ctx.send("Your rolled a " +str(roll))
+    await ctx.send("You rolled a " +str(roll))
     return
 
 @bot.command()
