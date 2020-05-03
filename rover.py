@@ -138,6 +138,12 @@ async def join(ctx):
 
 @bot.command()
 @commands.check(is_live_room)
+async def rayray(ctx):
+    await ctx.send("I've got Raymond in boxes for whoever wants him.\n\nedit: nm, sold for 1000 tickets.")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def champion(ctx):
     await ctx.send("https://www.youtube.com/watch?v=6ICTd__N1OY")
     return
