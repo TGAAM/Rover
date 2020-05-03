@@ -17,8 +17,8 @@ from discord.ext.commands import CheckFailure
 whitelistChannelsLive = [705571242312335431]
 
 # test channel whitelist
-# bot-testing, bot-testing-2, bot-testing-3, rovers-laboratory
-whitelistChannelsTest = [697060204571000903, 698135978270916678, 698135987225886740, 705578025085042729]
+# rovers-laboratory
+whitelistChannelsTest = [705578025085042729]
 
 
 # setup a discord client and bot commands
