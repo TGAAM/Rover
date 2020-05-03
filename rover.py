@@ -81,6 +81,12 @@ async def kk(ctx):
 
 @bot.command()
 @commands.check(is_live_room)
+async def savage(ctx):
+    await ctx.send("https://imgur.com/a/sceCpoM")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def roll(ctx, die):
     try:
         assert int(die) == float(die)
@@ -138,7 +144,7 @@ async def champion(ctx):
 
 @bot.command()
 @commands.check(is_live_room)
-async def fishing(ctx):
+async def gofish(ctx):
     await ctx.send("You caught a sea bass! \n I'd give it a C+!")
     return
 
