@@ -60,6 +60,11 @@ async def on_ready():
 """
 Live commmands
 """
+@bot.command()
+@commands.check(is_live_room)
+async def spring(ctx):
+    await ctx.send("https://imgur.com/a/MtrT5IZ")
+    return
 
 @bot.command()
 @commands.check(is_live_room)
