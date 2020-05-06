@@ -86,6 +86,12 @@ async def spring(ctx):
 
 @bot.command()
 @commands.check(is_live_room)
+async def phan(ctx):
+    await ctx.send("it me")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def killager(ctx):
     await ctx.send("https://gfycat.com/infantileearlybudgie")
     return
