@@ -54,7 +54,10 @@ async def is_dev_room(ctx):
 
 async def is_mod(ctx):
     # look through the list of mod roles and check if the user has one
-    for role in modRoles:
+    print (modRoles)
+    print (ctx.author.roles)
+    for roleID in modRoles:
+        role = ctx.guild.get_role(roleID)
         if (role in ctx.author.roles):
             # only need one match to be valid
             return True
