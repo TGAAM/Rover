@@ -14,12 +14,12 @@ from discord.ext.commands import MissingRequiredArgument
 
 
 # live channel whitelist
-# rovers-park
-whitelistChannelsLive = [705571242312335431]
+# rovers-park, #the-plaza, #the-roost
+whitelistChannelsLive = [705571242312335431, 681923559022788654, 696107732260093963]
 
 # test channel whitelist
-# rovers-laboratory
-whitelistChannelsTest = [705578025085042729]
+# rovers-laboratory, #gyroid-gallery
+whitelistChannelsTest = [705578025085042729, 681948931491364876]
 
 # dev channel whitelist
 # rovers-laboratory
