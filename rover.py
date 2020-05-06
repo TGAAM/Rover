@@ -99,7 +99,14 @@ async def important(ctx):
 @bot.command()
 @commands.check(is_live_room)
 async def kk(ctx):
-    await ctx.send("https://www.youtube.com/watch?v=-4AFLKoGC3M")
+    songlist = ["https://www.youtube.com/watch?v=O5069uLjZJ0", "https://www.youtube.com/watch?v=cMo_tA4jQzE", "https://www.youtube.com/watch?v=fGccYO16Dr0"
+                ,  "https://www.youtube.com/watch?v=eOmbWmhLg8Q", "https://www.youtube.com/watch?v=sy13B7AJwAo", "https://www.youtube.com/watch?v=xDV4pfH74Ig"
+                , "https://www.youtube.com/watch?v=79DQ8aeS20M", "https://www.youtube.com/watch?v=2AxndX0apoM&t=5s","https://www.youtube.com/watch?v=2AxndX0apoM"
+                , "https://www.youtube.com/watch?v=In0WGlHKsLE", "https://www.youtube.com/watch?v=j77TrwS25q4"
+                ]
+
+    songNum = random.randint(0, len(songlist)-1)
+    await ctx.send(songlist[songNum])
     return
 
 @bot.command()
