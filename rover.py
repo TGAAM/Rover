@@ -133,6 +133,12 @@ async def hi(ctx):
 
 @bot.command()
 @commands.check(is_live_room)
+async def ping(ctx):
+    await ctx.send("Pong!")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def beep(ctx):
     await ctx.send("Boop!")
     return
