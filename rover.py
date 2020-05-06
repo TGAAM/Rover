@@ -21,6 +21,14 @@ whitelistChannelsLive = [705571242312335431]
 # rovers-laboratory
 whitelistChannelsTest = [705578025085042729]
 
+# dev channel whitelist
+# rovers-laboratory
+whitelistChannelsDev = [707608424543682670]
+
+# mod roles
+# prime, overlord, island staff
+modRoles = [689120404664746018, 689120151362469924, 681917732123312188]
+
 
 # setup a discord client and bot commands
 #client = discord.Client()
@@ -34,12 +42,26 @@ bot.remove_command("help")
 async def globally_block_dms(ctx):
     return ctx.guild is not None
 
-# whitelist check
+# whitelist checks
 async def is_live_room(ctx):
-    return (ctx.channel.id in whitelistChannelsLive or ctx.channel.id in whitelistChannelsTest)
+    return (ctx.channel.id in whitelistChannelsLive or ctx.channel.id in whitelistChannelsTest or ctx.channel.id in whitelistChannelsDev)
 
 async def is_test_room(ctx):
-    return (ctx.channel.id in whitelistChannelsTest)
+    return (ctx.channel.id in whitelistChannelsTest or ctx.channel.id in whitelistChannelsDev)
+
+async def is_dev_room(ctx):
+    return (ctx.channel.id in whitelistChannelsDev)
+
+async def is_mod(ctx):
+    # look through the list of mod roles and check if the user has one
+    for role in modRoles:
+        if (role in ctx.author.roles):
+            # only need one match to be valid
+            return True
+    
+    # nothing found so not a mod
+    return False
+
 
 # initial setup 
 @bot.event
@@ -49,14 +71,6 @@ async def on_ready():
 
 
 
-
-"""
-# initial setup 
-@client.event
-async def on_ready():
-    # notify the log that it's ready
-    print('We have logged in as {0.user}'.format(client))
-"""
 
 """
 Live commmands
@@ -189,6 +203,23 @@ async def exampletest(ctx):
     await ctx.send("This is a test only command")
     return
 
+@bot.command()
+@commands.check(is_test_room)
+async def amIMod(ctx):
+    if (await is_mod(ctx)):
+        await ctx.send("You are a mod " + str(ctx.author.name))
+    else:
+        await ctx.send("You are not a mod " + str(ctx.author.name))
+    return
+
+"""
+Dev only commands
+"""
+@bot.command()
+@commands.check(is_dev_room)
+async def exampleDevCommand(ctx):
+    await ctx.send("This is a dev only command")
+    return
 
 
 # error handling
