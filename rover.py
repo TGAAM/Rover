@@ -10,6 +10,7 @@ import random
 from discord.ext import commands
 from discord.ext.commands import CommandNotFound
 from discord.ext.commands import CheckFailure
+from discord.ext.commands import MissingRequiredArgument
 
 
 # live channel whitelist
@@ -89,6 +90,7 @@ async def kk(ctx):
 async def savage(ctx):
     await ctx.send("https://imgur.com/a/sceCpoM")
     return
+
 
 @bot.command()
 @commands.check(is_live_room)
@@ -190,6 +192,9 @@ async def on_command_error(ctx, error):
     if isinstance(error, CommandNotFound):
         return
     elif isinstance(error, CheckFailure):
+        return
+    elif isinstance(error, MissingRequiredArgument):
+        await ctx.send("You need to include more details for this command")
         return
 
     raise error
