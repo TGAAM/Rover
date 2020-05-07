@@ -79,8 +79,8 @@ async def on_ready():
 Live commmands
 """
 @bot.command()
-@commands.myrrien(is_live_room)
-async def aro(ctx):
+@commands.check(is_live_room)
+async def myrrien(ctx):
     await ctx.send("hullo gentlepeople")
     return
 
