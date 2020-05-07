@@ -80,7 +80,7 @@ Live commmands
 """
 
 @bot.command(aliases = [".", "davise", "doт", "shower"])
-@commands.check(is_dev_room)
+@commands.check(is_live_room)
 async def dot(ctx):
     choice = random.randint(1,2)
     if (choice == 1):
