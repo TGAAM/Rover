@@ -80,6 +80,30 @@ Live commmands
 """
 @bot.command()
 @commands.check(is_live_room)
+async def hello(ctx):
+    await ctx.send("Hi pal")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
+async def hey(ctx):
+    await ctx.send("Hello friend")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
+async def tg(ctx):
+    await ctx.send("<:haunter:689169011866730720> Now calling TGAAM <:haunter:689169011866730720>\nPlease hold.\n\n...\n\nMust be doing something `%important`")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
+async def uncool(ctx):
+    await ctx.send("https://cdn.discordapp.com/attachments/686356524385173553/707577611303256064/7lzcc2z1r2x41.png")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def spring(ctx):
     await ctx.send("https://imgur.com/a/MtrT5IZ")
     return
