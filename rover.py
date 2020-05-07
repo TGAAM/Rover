@@ -78,19 +78,18 @@ async def on_ready():
 """
 Live commmands
 """
-@bot.command()
-@commands.check(is_live_room)
-async def hello(ctx):
-    await ctx.send("Hi pal")
+
+@bot.command(aliases = [".", "davise", "doт", "shower"])
+@commands.check(is_dev_room)
+async def dot(ctx):
+    choice = random.randint(1,2)
+    if (choice == 1):
+        await ctx.send("WHO PING ME?")
+    else:
+        await ctx.send("brb shower")
     return
 
-@bot.command()
-@commands.check(is_live_room)
-async def hey(ctx):
-    await ctx.send("Hello friend")
-    return
-
-@bot.command()
+@bot.command(aliases = ["tgaam", "tgam", "tgm"])
 @commands.check(is_live_room)
 async def tg(ctx):
     await ctx.send("<:haunter:689169011866730720> Now calling TGAAM <:haunter:689169011866730720>\nPlease hold.\n\n...\n\nMust be doing something `%important`")
@@ -179,7 +178,7 @@ async def help(ctx):
     await ctx.send("I don't need any help right now.\nBut thanks for asking!")
     return
 
-@bot.command()
+@bot.command(aliases = ["hey", "hello", "howdy", "hola"])
 @commands.check(is_live_room)
 async def hi(ctx):
     await ctx.send("Hey there buddy")
