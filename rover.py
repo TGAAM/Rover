@@ -78,12 +78,17 @@ async def on_ready():
 """
 Live commmands
 """
+@bot.command()
+@commands.myrrien(is_live_room)
+async def aro(ctx):
+    await ctx.send("hullo gentlepeople")
+    return
+
 @bot.command(aliases = ["ari"])
 @commands.check(is_live_room)
 async def aro(ctx):
     await ctx.send("<:isauwu:691633580606095400>")
     return
-
 
 @bot.command(aliases = [".", "davise", "doт", "shower"])
 @commands.check(is_live_room)
