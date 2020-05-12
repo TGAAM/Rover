@@ -271,6 +271,12 @@ async def exampleDevCommand(ctx):
     await ctx.send("This is a dev only command")
     return
 
+@bot.command()
+@commands.check(is_dev_room)
+async def devturnip(ctx):
+    await ctx.send(file=discord.File('turnips.mov'))
+
+
 
 # error handling
 @bot.event
