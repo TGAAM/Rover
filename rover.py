@@ -78,6 +78,12 @@ async def on_ready():
 """
 Live commmands
 """
+@bot.command(aliases = ["turnips"])
+@commands.check(is_live_room)
+async def turnip(ctx):
+    await ctx.send("https://discordapp.com/channels/681917060011655179/686356524385173553/709480670237294682")
+    return
+
 @bot.command()
 @commands.check(is_live_room)
 async def myrrien(ctx):
@@ -270,12 +276,6 @@ Dev only commands
 async def exampleDevCommand(ctx):
     await ctx.send("This is a dev only command")
     return
-
-@bot.command()
-@commands.check(is_dev_room)
-async def devturnip(ctx):
-    await ctx.send(file=discord.File('turnips.mov'))
-
 
 
 # error handling
