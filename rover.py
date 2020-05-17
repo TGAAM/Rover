@@ -79,13 +79,15 @@ Live commmands
 @bot.command(aliases = ["turnips"])
 @commands.check(is_live_room)
 async def turnip(ctx):
-    await ctx.send("https://discordapp.com/channels/681917060011655179/686356524385173553/709480670237294682")
+    embed=discord.Embed(description="https://discordapp.com/channels/681917060011655179/686356524385173553/709480670237294682", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def myrrien(ctx):
-    await ctx.send("hullo gentlepeople")
+    embed=discord.Embed(description="hullo gentlepeople", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command(aliases = ["ari"])
@@ -97,35 +99,43 @@ async def aro(ctx):
 @bot.command(aliases = [".", "davise", "doт", "shower"])
 @commands.check(is_live_room)
 async def dot(ctx):
-    choice = random.randint(1,2)
-    if (choice == 1):
-        await ctx.send("WHO PING ME?")
-    else:
-        await ctx.send("brb shower")
+    responses = ("WHO PING ME?", "brb shower")
+    choice = random.randint(0,len(responses)-1)
+    embed=discord.Embed(description=responses[choice], color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command(aliases = ["tgaam", "tgam", "tgm"])
 @commands.check(is_live_room)
 async def tg(ctx):
-    await ctx.send("<:haunter:689169011866730720> Now calling TGAAM <:haunter:689169011866730720>\nPlease hold.\n\n...\n\nMust be doing something `%important`")
+    embed=discord.Embed(title="<:haunter:689169011866730720> Now calling TGAAM <:haunter:689169011866730720>", description="Please hold.", color=0xffc572)
+    embed.add_field(name="...", value="...")
+    embed.set_footer(text="Must be doing something %important")
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def uncool(ctx):
-    await ctx.send("https://cdn.discordapp.com/attachments/686356524385173553/707577611303256064/7lzcc2z1r2x41.png")
+    embed=discord.Embed(color=0xffc572)
+    embed.set_image(url="https://cdn.discordapp.com/attachments/686356524385173553/707577611303256064/7lzcc2z1r2x41.png")
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def spring(ctx):
-    await ctx.send("https://imgur.com/a/MtrT5IZ")
+    embed=discord.Embed(color=0xffc572)
+    embed.set_image(url="https://imgur.com/a/MtrT5IZ")
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def phan(ctx):
-    await ctx.send("it me")
+    embed=discord.Embed(description="it me", color=0xffc572)
+    embed.set_thumbnail(url="https://i.imgur.com/yOS4rdj.png")
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
@@ -156,7 +166,9 @@ async def kk(ctx):
 @bot.command()
 @commands.check(is_live_room)
 async def savage(ctx):
-    await ctx.send("https://imgur.com/a/sceCpoM")
+    embed=discord.Embed(color=0xffc572)
+    embed.set_image(url="https://imgur.com/a/sceCpoM")
+    await ctx.send(embed=embed)
     return
 
 
@@ -172,55 +184,73 @@ async def roll(ctx, die):
         await ctx.send("You can't roll a die with " + str(die) + " sides, smh")
         return
     roll = random.randint(1, die)
-    await ctx.send("You rolled a " +str(roll))
+    result = "You rolled a " +str(roll)
+    embed=discord.Embed(description=result, color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def banner(ctx):
-    await ctx.send("https://imgur.com/a/D5UnEZK")
+    embed=discord.Embed(color=0xffc572)
+    embed.set_image(url="https://imgur.com/a/D5UnEZK")
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def flavor(ctx):
-    await ctx.send("Manila is my favorite flavor of clam!")
+    embed=discord.Embed(description="Manila is my favorite flavor of clam", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command(aliases = ["helpme"])
 @commands.check(is_live_room)
 async def help(ctx):
-    await ctx.send("I don't need any help right now.\nBut thanks for asking!")
+    embed=discord.Embed(description="I don't need any help right now.\nBut thanks for asking!", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command(aliases = ["hey", "hello", "howdy", "hola"])
 @commands.check(is_live_room)
 async def hi(ctx):
-    await ctx.send("Hey there buddy")
+    embed=discord.Embed(description="Hey there buddy", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def ping(ctx):
-    await ctx.send("Pong!")
+    embed=discord.Embed(description="Pong!", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def beep(ctx):
-    await ctx.send("Boop!")
+    embed=discord.Embed(description="Boop!", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def join(ctx):
-    await ctx.send(".john")
+    embed=discord.Embed(description=".john", color=0xffc572)
+    await ctx.send(embed=embed)
+    return
+
+@bot.command()
+@commands.check(is_live_room)
+async def john(ctx):
+    embed=discord.Embed(description="You are already queued", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
 @commands.check(is_live_room)
 async def rayray(ctx):
-    await ctx.send("@ everyone I've got Raymond in boxes for whoever wants him.\n\nedit: nm, sold for 1000 tickets.")
+    embed=discord.Embed(title="@ everyone I've got Raymond in boxes for whoever wants him.", description="edit: nm, sold for 1000 tickets.", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
@@ -232,7 +262,8 @@ async def champion(ctx):
 @bot.command()
 @commands.check(is_live_room)
 async def gofish(ctx):
-    await ctx.send("You caught a sea bass! \n I'd give it a C+!")
+    embed=discord.Embed(description="You caught a sea bass! \n I'd give it a C+!", color=0xffc572)
+    await ctx.send(embed=embed)
     return
 
 @bot.command()
@@ -244,7 +275,22 @@ async def gmax(ctx):
 @bot.command()
 @commands.check(is_live_room)
 async def party(ctx):
-    await ctx.send("🥳 Party Time! 🥳")
+    embed=discord.Embed(title="🥳 Party Time! 🥳", color=0xffc572)
+    await ctx.send(embed=embed)
+    return
+
+@bot.command(aliases = ["wooper"])
+@commands.check(is_live_room)
+async def woop(ctx):
+    embed=discord.Embed(title="Woop Woop!", color=0xffc572)
+    embed.set_image(url="https://img.pokemondb.net/artwork/wooper.jpg")
+    await ctx.send(embed=embed)
+    return
+
+@bot.command(aliases = ["appeal", "appealing", "banana"])
+@commands.check(is_live_room)
+async def peel(ctx):
+    await ctx.send("https://www.youtube.com/watch?v=4yHijxLoAPA")
     return
 
 
