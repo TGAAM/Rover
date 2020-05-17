@@ -76,6 +76,12 @@ async def on_ready():
 """
 Live commmands
 """
+@bot.command(aliases = ["digging", "gus"])
+@commands.check(is_live_room)
+async def dig(ctx):
+    await ctx.send("https://www.youtube.com/watch?v=YyXs4qfZV_U")
+    return
+
 @bot.command(aliases = ["turnips"])
 @commands.check(is_live_room)
 async def turnip(ctx):
