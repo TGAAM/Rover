@@ -132,7 +132,7 @@ async def uncool(ctx):
 @commands.check(is_live_room)
 async def spring(ctx):
     embed=discord.Embed(color=0xffc572)
-    embed.set_image(url="https://imgur.com/a/MtrT5IZ")
+    embed.set_image(url="https://i.imgur.com/B5v5iFJ.png")
     await ctx.send(embed=embed)
     return
 
@@ -173,7 +173,7 @@ async def kk(ctx):
 @commands.check(is_live_room)
 async def savage(ctx):
     embed=discord.Embed(color=0xffc572)
-    embed.set_image(url="https://imgur.com/a/sceCpoM")
+    embed.set_image(url="https://i.imgur.com/By6QI1W.png")
     await ctx.send(embed=embed)
     return
 
@@ -199,7 +199,7 @@ async def roll(ctx, die):
 @commands.check(is_live_room)
 async def banner(ctx):
     embed=discord.Embed(color=0xffc572)
-    embed.set_image(url="https://imgur.com/a/D5UnEZK")
+    embed.set_image(url="https://i.imgur.com/3VkhfsO.jpg")
     await ctx.send(embed=embed)
     return
 
