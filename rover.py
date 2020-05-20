@@ -76,6 +76,12 @@ async def on_ready():
 """
 Live commmands
 """
+@bot.command(aliases = ["bongocat"])
+@commands.check(is_live_room)
+async def bongo(ctx):
+    await ctx.send("https://bongo.cat/")
+    return
+
 @bot.command(aliases = ["digging", "gus"])
 @commands.check(is_live_room)
 async def dig(ctx):
