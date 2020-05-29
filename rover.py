@@ -108,7 +108,7 @@ async def aro(ctx):
     await ctx.send("<:isauwu:691633580606095400>")
     return
 
-@bot.command(aliases = [".", "davise", "doт", "shower"])
+@bot.command(aliases = [".", "davise", "doт", "shower", "dabisc"])
 @commands.check(is_live_room)
 async def dot(ctx):
     responses = ("WHO PING ME?", "brb shower")
