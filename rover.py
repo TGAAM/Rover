@@ -197,10 +197,6 @@ async def roll(ctx, die):
         return
     roll = random.randint(1, die)
     result = "You rolled a " + str(roll)
-
-    if (ctx.author.id == 212676568550473748):
-        result = "You rolled a " + str(die)
-
     embed=discord.Embed(description=result, color=0xffc572)
     await ctx.send(embed=embed)
     return
