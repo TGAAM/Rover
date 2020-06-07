@@ -152,6 +152,12 @@ async def phan(ctx):
 
 @bot.command()
 @commands.check(is_live_room)
+async def yeet(ctx):
+    await ctx.send("https://clips.twitch.tv/GorgeousOriginalPresidentRedCoat")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def killager(ctx):
     await ctx.send("https://gfycat.com/infantileearlybudgie")
     return
