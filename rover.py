@@ -78,6 +78,33 @@ Live commmands
 """
 @bot.command()
 @commands.check(is_live_room)
+async def shay(ctx):
+    # define the possible responses
+    responseList = ["Wait, what?"
+                , "<:rusrs:683806905529008148>"
+                , "A dancing Wooper has appeared. \nhttps://youtu.be/P573r7j5ou4%E2%80%9D"
+                , "Try again later.\nRover is done with your antics."
+                , "FT: Raymond\nLF: 20 Million NMT, 50 trillion bells, and either of your eyeballs (Left is preferred)"
+                , "https://pbs.twimg.com/media/EaCJKhzXsAYxHpq?format=jpg&name=small"
+                ]
+    # define the probability of each choice relative to each other
+    weightList = [.5, .2, .1, .1, .05, .05]
+
+    # pick a choice
+    choice = random.choices(responseList, weights=weightList, k=1)[0]
+
+    # create an embed with the choice. Optional and color can be changed
+    #embed=discord.Embed(description=choice, color=0xffc572)
+
+    # send the response
+    #await ctx.send(embed=embed)
+    await ctx.send(choice)
+
+    # end the command
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def kaylen(ctx):
     responses = ("https://66.media.tumblr.com/10f56e3e98ea49ecfe7a77257033617e/tumblr_pe6ur7YOQJ1vg5ufe_400.gif"
                 , "https://data.whicdn.com/images/315087978/original.gif"
