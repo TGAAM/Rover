@@ -76,6 +76,21 @@ async def on_ready():
 """
 Live commmands
 """
+@bot.command(aliases = ["zorakas"])
+@commands.check(is_live_room)
+async def hero(ctx):
+    responses = ("https://feen.us/bkyfuam7.gif"
+                , "https://feen.us/h2j7k9.gif")
+    choice = random.randint(0,len(responses)-1)
+    await ctx.send(responses[choice])
+    return
+
+@bot.command()
+@commands.check(is_live_room)
+async def kuma(ctx):
+    await ctx.send("https://media.discordapp.net/attachments/539348593711120384/717197247640502272/gulliflourish.gif")
+    return
+
 @bot.command()
 @commands.check(is_live_room)
 async def shay(ctx):
