@@ -189,7 +189,7 @@ async def uncool(ctx):
 @bot.command()
 @commands.check(is_live_room)
 async def spring(ctx):
-    embed=discord.Embed(color=0xffc572)
+    embed=discord.Embed(description = "Spring photo contest winner: Renna",color=0xffc572)
     embed.set_image(url="https://i.imgur.com/B5v5iFJ.png")
     await ctx.send(embed=embed)
     return
@@ -262,7 +262,7 @@ async def roll(ctx, die):
 @bot.command()
 @commands.check(is_live_room)
 async def banner(ctx):
-    embed=discord.Embed(color=0xffc572)
+    embed=discord.Embed(description = "Banner contest winner: Angel", color=0xffc572)
     embed.set_image(url="https://i.imgur.com/3VkhfsO.jpg")
     await ctx.send(embed=embed)
     return
