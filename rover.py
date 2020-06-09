@@ -78,6 +78,15 @@ Live commmands
 """
 @bot.command()
 @commands.check(is_live_room)
+async def banner(ctx):
+    #embed=discord.Embed(description = "Banner contest winner: Angel", color=0xffc572)
+    #embed.set_image(url="https://i.imgur.com/3VkhfsO.jpg")
+    #await ctx.send(embed=embed)
+    await ctx.send("Banner contest winner: Angel\nhttps://i.imgur.com/3VkhfsO.jpg")
+    return
+
+@bot.command()
+@commands.check(is_live_room)
 async def showtime(ctx):
     #embed=discord.Embed(description = "Showtime photo contest winner: Hero", color=0xffc572)
     #embed.set_image(url="https://i.imgur.com/IZwBWSq.png")
@@ -265,14 +274,6 @@ async def roll(ctx, die):
     roll = random.randint(1, die)
     result = "You rolled a " + str(roll)
     embed=discord.Embed(description=result, color=0xffc572)
-    await ctx.send(embed=embed)
-    return
-
-@bot.command()
-@commands.check(is_live_room)
-async def banner(ctx):
-    embed=discord.Embed(description = "Banner contest winner: Angel", color=0xffc572)
-    embed.set_image(url="https://i.imgur.com/3VkhfsO.jpg")
     await ctx.send(embed=embed)
     return
 
