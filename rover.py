@@ -76,6 +76,16 @@ async def on_ready():
 """
 Live commmands
 """
+@bot.command()
+@commands.check(is_live_room)
+async def kaylen(ctx):
+    responses = ("https://66.media.tumblr.com/10f56e3e98ea49ecfe7a77257033617e/tumblr_pe6ur7YOQJ1vg5ufe_400.gif"
+                , "https://data.whicdn.com/images/315087978/original.gif"
+                , "https://i.pinimg.com/originals/5c/43/9c/5c439c7f1d7d39474d81b86cc68a7413.gif")
+    choice = random.randint(0,len(responses)-1)
+    await ctx.send(responses[choice])
+    return
+
 @bot.command(aliases = ["bongocat"])
 @commands.check(is_live_room)
 async def bongo(ctx):
