@@ -76,6 +76,15 @@ async def on_ready():
 """
 Live commmands
 """
+@bot.command()
+@commands.check(is_live_room)
+async def showtime(ctx):
+    #embed=discord.Embed(description = "Showtime photo contest winner: Hero", color=0xffc572)
+    #embed.set_image(url="https://i.imgur.com/IZwBWSq.png")
+    await ctx.send("Showtime photo contest winner: Hero\nhttps://i.imgur.com/IZwBWSq.png")
+    #await ctx.send(embed=embed)
+    return
+
 @bot.command(aliases = ["zorakas"])
 @commands.check(is_live_room)
 async def hero(ctx):
