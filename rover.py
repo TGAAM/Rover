@@ -12,7 +12,7 @@ from discord.ext.commands import MissingRequiredArgument
 from datetime import datetime, timedelta
 
 # time to send calendar updates in UTC 24h
-calendar_update_send_time = '17:21'
+calendar_update_send_time = '00:00'
 
 # live channel whitelist
 # rovers-park, #the-plaza, #the-roost
@@ -385,7 +385,7 @@ async def timed_jobs():
             guild = bot.get_guild(681917060011655179)
             channel = guild.get_channel(731478991881371690)
 
-            send_date = datetime.strftime(datetime.now() + timedelta(days = 1), '%B-%d') 
+            send_date = datetime.strftime(datetime.now(), '%B-%d') 
             await post_events(channel, send_date)
             time = 90
         else:
