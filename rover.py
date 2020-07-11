@@ -11,7 +11,8 @@ from discord.ext.commands import CheckFailure
 from discord.ext.commands import MissingRequiredArgument
 from datetime import datetime, timedelta
 
-calendar_update_send_time = '13:17'
+# time to send calendar updates in UTC 24h
+calendar_update_send_time = '17:21'
 
 # live channel whitelist
 # rovers-park, #the-plaza, #the-roost
