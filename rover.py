@@ -11,7 +11,7 @@ from discord.ext.commands import CheckFailure
 from discord.ext.commands import MissingRequiredArgument
 from datetime import datetime, timedelta
 
-calendar_update_send_time = '13:05'
+calendar_update_send_time = '13:17'
 
 # live channel whitelist
 # rovers-park, #the-plaza, #the-roost
@@ -22,7 +22,7 @@ whitelistChannelsLive = [705571242312335431, 681923559022788654, 696107732260093
 whitelistChannelsTest = [705578025085042729, 681948931491364876]
 
 # dev channel whitelist
-# rovers-laboratory
+# rovers-development
 whitelistChannelsDev = [707608424543682670]
 
 # mod roles
@@ -380,6 +380,7 @@ async def timed_jobs():
 
         # calendar events
         if now == calendar_update_send_time:
+            print (now + "-------------------------------")
             guild = bot.get_guild(681917060011655179)
             channel = guild.get_channel(731478991881371690)
 
@@ -387,6 +388,7 @@ async def timed_jobs():
             await post_events(channel, send_date)
             time = 90
         else:
+            print(now)
             time = 30
         await asyncio.sleep(time)
 
