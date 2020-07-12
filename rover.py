@@ -408,6 +408,13 @@ async def tomorrow(ctx):
     await post_events(ctx.channel, now)
     return
 
+@bot.command()
+@commands.check(is_test_room)
+async def yesterday(ctx):
+    now = datetime.strftime(datetime.now() - timedelta(days = 1), '%B-%d') 
+    await post_events(ctx.channel, now)
+    return
+
 
 @bot.command()
 @commands.check(is_test_room)
@@ -420,7 +427,7 @@ async def post_events(channel, now):
                 data = json.load(f)
 
     date_details = data[now]
-    embed=discord.Embed(title="Event plans for : " + now, description=date_details["event"], color=0xffc572)
+    embed=discord.Embed(title="Event plans for " + now, description=date_details["event"], color=0xffc572)
     await channel.send(embed=embed)
     return
 
