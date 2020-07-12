@@ -426,7 +426,7 @@ async def post_events(channel, now):
     with open('resources/ac_events.json') as f:
                 data = json.load(f)
 
-    date_details = data[now]
+    date_details = data[now.lower()]
     embed=discord.Embed(title="Event plans for " + now, description=date_details["event"], color=0xffc572)
     await channel.send(embed=embed)
     return
