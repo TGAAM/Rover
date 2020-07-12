@@ -395,21 +395,21 @@ async def timed_jobs():
 
 
 @bot.command()
-@commands.check(is_test_room)
+@commands.check(is_live_room)
 async def today(ctx):
     now = datetime.strftime(datetime.now(), '%B-%d') 
     await post_events(ctx.channel, now)
     return
 
 @bot.command()
-@commands.check(is_test_room)
+@commands.check(is_live_room)
 async def tomorrow(ctx):
     now = datetime.strftime(datetime.now() + timedelta(days = 1), '%B-%d') 
     await post_events(ctx.channel, now)
     return
 
 @bot.command()
-@commands.check(is_test_room)
+@commands.check(is_live_room)
 async def yesterday(ctx):
     now = datetime.strftime(datetime.now() - timedelta(days = 1), '%B-%d') 
     await post_events(ctx.channel, now)
@@ -417,7 +417,7 @@ async def yesterday(ctx):
 
 
 @bot.command()
-@commands.check(is_test_room)
+@commands.check(is_live_room)
 async def date(ctx, now):
     await post_events(ctx.channel, now)
     return
