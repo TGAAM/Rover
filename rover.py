@@ -381,7 +381,7 @@ async def timed_jobs():
 
         # calendar events
         if now == calendar_update_send_time:
-            print (now + "-------------------------------")
+            #print (now + "-------------------------------")
             guild = bot.get_guild(681917060011655179)
             channel = guild.get_channel(731478991881371690)
 
@@ -389,7 +389,7 @@ async def timed_jobs():
             await post_events(channel, send_date)
             time = 90
         else:
-            print(now)
+            #print(now)
             time = 30
         await asyncio.sleep(time)
 
