@@ -21,8 +21,8 @@ whitelistChannelsRover = [735521764360060968, 735993247540969513]
 modRoles = [689120404664746018, 681917732123312188]
 
 # roles to notify team when added
-# important-role, 
-alertRoles = [735592881972052120]
+# important-role, muted, muted-queue
+alertRoles = [735592881972052120, 681980308723073264, 681976670957207581]
 
 # primary role for each guild
 # Bot Party = Prime, AC = Island Staff
