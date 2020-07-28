@@ -28,7 +28,13 @@ class People (commands.Cog):
         await ctx.send("https://media.discordapp.net/attachments/539348593711120384/717197247640502272/gulliflourish.gif")
         return
 
-    @commands.command()
+    @commands.command(aliases = ["daydream", "dream", "dreaming"])
+    @commands.check(checks_list.is_live_room)
+    async def daydreaming(self, ctx):
+        await ctx.send("https://64.media.tumblr.com/7f60ade2a20178b0c3997fcfd5af5381/tumblr_pmtfu3Jib41wsfn4ho1_400.gif")
+        return
+
+    @commands.command(hidden = True)
     @commands.check(checks_list.is_live_room)
     async def shay(self, ctx):
         # define the possible responses
