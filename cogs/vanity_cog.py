@@ -76,6 +76,12 @@ class People (commands.Cog):
 
     @commands.command()
     @commands.check(checks_list.is_live_room)
+    async def vacation(self, ctx):
+        await ctx.send("Vacation Album Contest winner: Hanna\nhttps://i.imgur.com/tAWOWF1.png")
+        return
+
+    @commands.command()
+    @commands.check(checks_list.is_live_room)
     async def myrrien(self, ctx):
         embed=discord.Embed(description="hullo gentlepeople", color=0xffc572)
         await ctx.send(embed=embed)
