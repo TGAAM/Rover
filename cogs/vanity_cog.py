@@ -61,6 +61,19 @@ class People (commands.Cog):
         # end the command
         return
 
+
+    @commands.command()
+    @commands.check(checks_list.is_live_room)
+    async def hanna(self, ctx):
+        responses = ("https://media1.giphy.com/media/jqSVaKOtBjFZf1s4Ih/giphy.gif?cid=4d1e4f297b58472da1d318b4af5f034521faf22b6278621d&rid=giphy.gif"
+                    , "https://media0.giphy.com/media/Zdm1OZZu1s11AzIHHA/giphy.gif?cid=4d1e4f297b58472da1d318b4af5f034521faf22b6278621d&rid=giphy.gif"
+                    , "https://media3.giphy.com/media/QxqlC7oJq7lMJIgQEx/giphy.gif?cid=4d1e4f297b58472da1d318b4af5f034521faf22b6278621d&rid=giphy.gif"
+                    , "https://media3.giphy.com/media/U4pL3tfs2xeb2vMJDV/giphy.gif?cid=4d1e4f297b58472da1d318b4af5f034521faf22b6278621d&rid=giphy.gif"
+                    )
+        choice = random.randint(0,len(responses)-1)
+        await ctx.send(responses[choice])
+        return
+
     @commands.command()
     @commands.check(checks_list.is_live_room)
     async def myrrien(self, ctx):
