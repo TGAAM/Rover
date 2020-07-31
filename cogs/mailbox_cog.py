@@ -22,7 +22,7 @@ class Mailbox (commands.Cog):
         else:
             try:
                 await user.send(message)
-            except Exception as e:
+            except:
                 await ctx.send ("Unable to send that message")
                 traceback.print_exc()
 
@@ -44,10 +44,23 @@ class Mailbox (commands.Cog):
             for channelID in checks_list.whitelistChannelsRover:
                 try:                    
                     channel = self.bot.get_channel(channelID)
+                    fileList = []
+                    fileNames = []
+                    for attach in message.attachments:
+                        singleFile = await attach.to_file()
+                        fileList.append(singleFile)
+                        fileNames.append (singleFile.filename)
+
                     embed = discord.Embed(title="📩 Rover DM Received 📩", color=0xffc572)
                     embed.add_field(name = "Sender", value = message.author.mention)
-                    embed.add_field(name = "Message", value = message.content)
-                    await channel.send (embed = embed)
+
+                    if (message.content != ""):
+                        embed.add_field(name = "Message", value = message.content)
+                    
+                    if (len(fileNames) > 0):
+                        embed.add_field(name = "Attachments", value = str(fileNames))
+                    
+                    await channel.send (embed = embed, files=fileList)
                 except:
                         traceback.print_exc()
 
