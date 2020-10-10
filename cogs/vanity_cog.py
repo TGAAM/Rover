@@ -87,6 +87,12 @@ class People (commands.Cog):
         await ctx.send(embed=embed)
         return
 
+    @commands.command()
+    @commands.check(checks_list.is_live_room)
+    async def frog(self, ctx):
+        await ctx.send("https://i.imgur.com/AvakCrW.png")
+        return
+
 
     @commands.command(aliases = ["ari"])
     @commands.check(checks_list.is_live_room)
