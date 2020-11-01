@@ -93,6 +93,12 @@ class People (commands.Cog):
         await ctx.send("https://i.imgur.com/AvakCrW.png")
         return
 
+    @commands.command()
+    @commands.check(checks_list.is_live_room)
+    async def prowl(self, ctx):
+        await ctx.send("https://youtu.be/3ivDpvz5ZdU")
+        return
+
 
     @commands.command(aliases = ["ari"])
     @commands.check(checks_list.is_live_room)
