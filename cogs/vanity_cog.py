@@ -164,3 +164,27 @@ class People (commands.Cog):
         choice = random.randint(0,len(responses)-1)
         await ctx.send(responses[choice])
         return
+
+    @commands.command()
+    @commands.check(checks_list.is_live_room)
+    async def sit(self, ctx):
+        # Album: https://imgur.com/a/0fa6fjQ 
+        responses = ("https://i.imgur.com/cjol1iv.jpg", "https://i.imgur.com/dk0MefJ.jpg", "https://i.imgur.com/v02idsa.jpg"
+                    , "https://i.imgur.com/jXsGPt2.jpg", "https://i.imgur.com/zsnVlG2.jpg", "https://i.imgur.com/n8VxTz7.jpg"
+                    , "https://i.imgur.com/W739YEr.jpg", "https://i.imgur.com/f1F4KgM.jpg", "https://i.imgur.com/JP8UhmF.jpg"
+                    , "https://i.imgur.com/t4VD0Gk.jpg", "https://i.imgur.com/6g7ngan.jpg", "https://i.imgur.com/ZKPI5vd.jpg"
+                    , "https://i.imgur.com/YuUvLOO.jpg", "https://i.imgur.com/6stq7Kd.jpg", "https://i.imgur.com/9L4ERdM.jpg"
+                    , "https://i.imgur.com/jWxXgWV.jpg", "https://i.imgur.com/0PcgiS2.jpg", "https://i.imgur.com/Yubb3UQ.jpg"
+                    , "https://i.imgur.com/RSIdaSU.jpg", "https://i.imgur.com/qyMzZTZ.jpg", "https://i.imgur.com/k0S6mkE.jpg"
+                    , "https://i.imgur.com/NN6rD6n.jpg", "https://i.imgur.com/5axWlZM.jpg", "https://i.imgur.com/t3n2KhB.jpg"
+                    , "https://i.imgur.com/Ha2ZQWy.jpg", "https://i.imgur.com/gKxpgbw.png", "https://i.imgur.com/G2pHVfC.jpg"
+                    , "https://i.imgur.com/n6Wcv4x.jpg", "https://i.imgur.com/Sw8BeI6.jpg", "https://i.imgur.com/5axWlZM.jpg")
+        choice = random.randint(0,len(responses)-1)
+        await ctx.send(responses[choice])
+        return
+
+    @commands.command()
+    @commands.check(checks_list.is_live_room)
+    async def spooky(self, ctx):
+        await ctx.send("Spooktacular photo contest winner: Mabbie\nhttps://i.imgur.com/uIsivYW.png")
+        return
